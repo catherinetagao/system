@@ -104,6 +104,7 @@
 
             if (data){
                 $('#productUpdateModal').modal('hide');
+                // 
 
                 refetchProducts ()
                 Swal.fire({
