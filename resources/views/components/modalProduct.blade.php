@@ -11,6 +11,7 @@
       <div class="modal-body">
         <form action="">
         <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
           <input type="file" class="form-control" id="inputGroupFile02">
           <label class="input-group-text" for="inputGroupFile02">Upload</label>
         </div>    
