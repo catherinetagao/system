@@ -10,7 +10,10 @@
       </div>
       <div class="modal-body">
         <form action="">
-            
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" id="inputGroupFile02">
+          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        </div>    
         <div class="mb-3">
             <label for="product_name" class="form-label">Product Name</label>
             <input type="text" class="form-control" id="product_name">
@@ -18,10 +21,6 @@
         <div class="mb-3">
             <label for="product_desc" class="form-label">Description</label>
             <input type="text" class="form-control" id="product_desc">
-        </div>
-        <div class="input-group mb-3">
-          <input type="file" class="form-control" id="inputGroupFile02">
-          <label class="input-group-text" for="inputGroupFile02">Upload</label>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
