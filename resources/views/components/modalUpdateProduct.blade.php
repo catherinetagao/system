@@ -8,7 +8,11 @@
       </div>
       <div class="modal-body">
         <form action="">
-            
+        
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" id="inputGroupFile02">
+          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        </div>
         <div class="mb-3">
             <label for="product_name_update" class="form-label">Product Name</label>
             <input type="text" class="form-control" id="product_name_update">
@@ -20,10 +24,6 @@
         <div class="mb-3">
             <label for="price_update" class="form-label">Price</label>
             <input type="number" class="form-control" id="price_update">
-        </div>
-        <div class="input-group mb-3">
-          <input type="file" class="form-control" id="inputGroupFile02">
-          <label class="input-group-text" for="inputGroupFile02">Upload</label>
         </div>
         <div class="mb-3 invisible">
             <label for="price_update" class="form-label">Price</label>
