@@ -15,7 +15,6 @@
 
                     <!-- <a class="me-3 text-black text-decoration-none" href="/home"><li>Home</li></a> -->
                     <a class="me-3 text-black text-decoration-none" href="/about"><li>About</li></a>
-                    
                     <a class="me-3 text-black text-decoration-none" href="/products"><li>Products</li></a>
                     <a class="me-3 text-black text-decoration-none" href="/contacts"><li>Contact Us</li></a>
                     <!-- <a class="me-3 text-black text-decoration-none" href="/crud"><li>Crud</li></a> -->
@@ -45,8 +44,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
