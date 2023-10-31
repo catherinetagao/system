@@ -16,7 +16,7 @@
             </div>
         </div>
 
-    <div class="table-responsive rounded">
+    <div class="table-responsive-sm rounded">
     <table class="table">
         <thead>
             <tr class="text-center">
