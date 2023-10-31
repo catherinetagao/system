@@ -17,7 +17,7 @@
         </div>
 
     <div class="table-responsive rounded">
-    <table class="table table-bordered">
+    <table class="table">
         <thead>
             <tr class="text-center">
                 <th scope="col">IMAGE</th>
