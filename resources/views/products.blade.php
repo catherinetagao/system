@@ -16,6 +16,7 @@
             </div>
         </div>
 
+    <div class="container">
     <div class="table-responsive-sm rounded">
     <table class="table">
         <thead>
@@ -31,6 +32,7 @@
             
         </tbody>
     </table>
+    </div>
     </div>
 </div>
 
