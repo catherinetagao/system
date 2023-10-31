@@ -96,7 +96,7 @@
                                                 <img class="h-50" src={{asset('assets/img/img_products/`+ product.image_data +`')}}>
                                                 <div class="card-body">
                                                     <h5 class="card-title">`+ product.name +`</h5>
-                                                    <small class="text-muted">` + product.price +`</small><br/>
+                                                    <small class="text-muted">₱` + product.price +`</small><br/>
                                                     <button type="submit" class="btn btn-outline-secondary w-100">Add To Cart</button>
                                                 </div>
                                             </div>
