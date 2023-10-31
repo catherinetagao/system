@@ -17,7 +17,7 @@
         </div>
 
     <div class="container">
-    <div class="table-responsive-sm rounded">
+    <div class="table-responsive small rounded">
     <table class="table">
         <thead>
             <tr class="text-center">
