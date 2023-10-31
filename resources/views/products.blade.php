@@ -60,7 +60,7 @@
                                         <td> <img class="w-100 rounded" src={{asset('assets/img/img_products/`+ product.image_data +`')}}> </td>
                                         <td class="text-uppercase text-bold text-center"><strong>`+ product.name +`</strong></td>
                                         <td>`+ product.desc +`</td>
-                                        <td class="text-center">`+ product.price +`</td>
+                                        <td class="text-center">₱`+ product.price +`</td>
                                         
                                         <td>
                                             <div class="d-flex justify-content-center">
