@@ -103,6 +103,8 @@ class ApiController extends Controller
             $imageUrl = null;
         }
 
+        // dd($imageUrl);
+
         $product = Product::find($id)->update([
             "image_data"=>$imageUrl,
             "name"=>$request->product_name,
