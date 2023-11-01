@@ -93,7 +93,7 @@
             tableBody.innerHTML +=`
                                         <div class="col-sm-6 col-md-4 col-lg-2 my-2">
                                             <div class="card h-100">
-                                                <img class="h-50" src={{asset('assets/img/img_products/`+ product.image_data +`')}}>
+                                                <img class="h-50" src={{asset('`+ product.image_data +`')}}>
                                                 <div class="card-body">
                                                     <h5 class="card-title">`+ product.name +`</h5>
                                                     <small class="text-muted">₱` + product.price +`</small><br/>

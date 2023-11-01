@@ -10,11 +10,10 @@
       </div>
       <div class="modal-body">
         <form action="">
-        <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupFile02">Upload</label>
-          <input type="file" class="form-control" id="inputGroupFile02">
-          <label class="input-group-text" for="inputGroupFile02">Upload</label>
-        </div>    
+        <div class="mb-3">
+            <label for="images" class="form-label">Images</label>
+            <input type="file" class="form-control" id="images">
+        </div> 
         <div class="mb-3">
             <label for="product_name" class="form-label">Product Name</label>
             <input type="text" class="form-control" id="product_name">
@@ -43,18 +42,23 @@
 
 <script>
     const createProduct = async () => {
+        const product_image = document.getElementById('images').files[0]
         const product_name = document.getElementById('product_name').value
         const product_desc = document.getElementById('product_desc').value
         const price = document.getElementById('price').value
+        
 
         const formData ={
+            'product_image':product_image,
             'product_name':product_name,
             'description':product_desc,
             'price':price
         }
 
         // console.log(product_name, product_desc, price)
-        const {data} = await axios.post('/api/product/create',{ formData })
+        const {data} = await axios.post('/api/product/create', formData ,{
+          headers: {'Content-Type':'multipart/form-data'}
+        })
 
         if (data) {
             $('#productModal').modal('hide');

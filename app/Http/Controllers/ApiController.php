@@ -20,10 +20,22 @@ class ApiController extends Controller
 
         $product = new Product();
 
-        $product->name=$request->formData['product_name'];
-        $product->desc=$request->formData['description'];
-        $product ->price=$request->formData['price'];
-        $product ->image_data ="hahahha";
+        if ($request->hasFile('product_image')) {
+            $image = $request->file('product_image');
+            $imageName = $this->sanitizeFileName($image->getClientOriginalName());
+
+            // Store the image in the public/images folder
+            $image->storeAs('public/images', $imageName);
+
+            // Generate a URL for the stored image
+            $imageUrl = 'storage/images/' . $imageName;
+        } else {
+            $imageUrl = null;
+        }
+        $product->name=$request->product_name;
+        $product->desc=$request->description;
+        $product ->price=$request->price;
+        $product ->image_data =$imageUrl;
 
         if($product->save()){
             return response()->json(['message'=>'Product created successfully'], 201);
@@ -32,6 +44,26 @@ class ApiController extends Controller
         }
 
         // return 'heheheh';
+    }
+
+    public function sanitizeFileName($fileName) {
+        // Remove leading and trailing spaces
+        $fileName = trim($fileName);
+    
+        // Replace spaces with underscores or another character of your choice
+        $fileName = str_replace(' ', '_', $fileName);
+    
+        // Remove special characters and any potentially harmful characters
+        $fileName = preg_replace('/[^\w\-.]/', '', $fileName);
+    
+        // Ensure the file name doesn't start with a dot (hidden file)
+        $fileName = ltrim($fileName, '.');
+    
+        // Limit the file name length (you can set your own maximum length)
+        $maxFileNameLength = 255; // Maximum file name length
+        $fileName = substr($fileName, 0, $maxFileNameLength);
+    
+        return $fileName;
     }
 
     

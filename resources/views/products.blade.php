@@ -57,7 +57,7 @@
 
         data.forEach(product => {
             tableBody.innerHTML +=`<tr class="text-justify">
-                                        <td> <img class="w-100 rounded" src={{asset('assets/img/img_products/`+ product.image_data +`')}}> </td>
+                                        <td> <img class="w-100 rounded" src={{asset('`+ product.image_data +`')}}> </td>
                                         <td class="text-uppercase text-bold text-center"><strong>`+ product.name +`</strong></td>
                                         <td>`+ product.desc +`</td>
                                         <td class="text-center">₱`+ product.price +`</td>
@@ -162,7 +162,7 @@
 
         data.forEach(product => {
             tableBody.innerHTML +=`<tr class="text-justify">
-                                        <td> <img class="w-100 rounded" src={{asset('assets/img/img_products/`+ product.image_data +`')}}> </td>
+                                        <td> <img class="w-100 rounded" src={{asset('`+ product.image_data +`')}}> </td>
                                         <td class="text-uppercase text-bold text-center"><strong>`+ product.name +`</strong></td>
                                         <td>`+ product.desc +`</td>
                                         <td class="text-center">₱`+ product.price +`</td>
