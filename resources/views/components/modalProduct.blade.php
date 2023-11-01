@@ -19,8 +19,8 @@
             <input type="text" class="form-control" id="product_name">
         </div>
         <div class="mb-3">
-            <label for="product_desc" class="form-label">Description</label>
-            <input type="text" class="form-control" id="product_desc">
+            <label class="form-label" for="product_desc">Description</label>
+            <textarea class="form-control" id="product_desc" style="height: 100px"></textarea>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
