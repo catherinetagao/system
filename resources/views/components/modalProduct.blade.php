@@ -63,6 +63,7 @@
         if (data) {
             $('#productModal').modal('hide');
 
+            refetchProducts()
             Swal.fire({
                 icon: 'success',
                 title: data.message,
