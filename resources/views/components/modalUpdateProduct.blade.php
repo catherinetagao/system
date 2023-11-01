@@ -9,8 +9,8 @@
       <div class="modal-body">
         <form action="">
         <div class="mb-3">
-            <label for="images" class="form-label">Image</label>
-            <input type="file" class="form-control" id="images">
+            <label for="images_update" class="form-label">Image</label>
+            <input type="file" class="form-control" id="images_update">
         </div> 
         <div class="mb-3">
             <label for="product_name_update" class="form-label">Product Name</label>

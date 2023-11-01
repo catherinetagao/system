@@ -90,19 +90,23 @@
     }
 
     const updateProduct = async () =>{
+        const images = document.getElementById('images_update').files[0]
         const product_name = document.getElementById('product_name_update').value
         const product_desc = document.getElementById('product_desc_update').value
         const price = document.getElementById('price_update').value
         const id = document.getElementById('updateID').value
 
         const formData ={
+            'product_image': images,
             'product_name':product_name,
             'description':product_desc,
             'price':price
         }
 
         try{
-            const { data } = await axios.post("/api/product/update/"+id,{formData})
+            const { data } = await axios.post("/api/product/update/"+id,formData,{
+                headers:{'Content-Type':'multipart/form-data'}
+            })
 
             if (data){
                 $('#productUpdateModal').modal('hide');

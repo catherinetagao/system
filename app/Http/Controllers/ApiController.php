@@ -90,11 +90,24 @@ class ApiController extends Controller
 
     public function updateProduct($id,Request $request){
         // dd($request);
+        if ($request->hasFile('product_image')) {
+            $image = $request->file('product_image');
+            $imageName = $this->sanitizeFileName($image->getClientOriginalName());
+
+            // Store the image in the public/images folder
+            $image->storeAs('public/images', $imageName);
+
+            // Generate a URL for the stored image
+            $imageUrl = 'storage/images/' . $imageName;
+        } else {
+            $imageUrl = null;
+        }
 
         $product = Product::find($id)->update([
-            "name"=>$request->formData['product_name'],
-            "desc"=>$request->formData['description'],
-            "price"=>$request->formData['price'],
+            "image_data"=>$imageUrl,
+            "name"=>$request->product_name,
+            "desc"=>$request->description,
+            "price"=>$request->price,
         ]);
 
         if($product){
