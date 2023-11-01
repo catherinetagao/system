@@ -127,7 +127,7 @@
     }
 
     const deleteProduct = async (id) =>{
-        
+
         try{
             const { data } = await axios.get("/api/product/delete/"+id)
             if (data){

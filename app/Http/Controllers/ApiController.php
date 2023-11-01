@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -68,9 +69,17 @@ class ApiController extends Controller
 
     
     public function deleteProduct($id){
-        $product =  Product::find($id)->delete();
+        // dd($id);
+        $product =  Product::find($id);
+        // Delete the associated image file if it exists
+        if ($product->image_data) {
+            $imagePath = public_path($product->image_data); // Get the full path to the image
+            if (File::exists($imagePath)) {
+                File::delete($imagePath); // Delete the image file
+            }
+        }
 
-        if($product){
+        if($product->delete()){
             return response()->json(['message'=>'Product deleted successfully'], 201);
         }else{
             return response()->json(['message'=>'Product not deleted'], 500);
