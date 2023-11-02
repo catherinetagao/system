@@ -90,6 +90,11 @@
     }
 
     const updateProduct = async () =>{
+        document.getElementById('images_update_alert').innerHTML=''
+        document.getElementById('product_name_update_alert').innerHTML=''
+        document.getElementById('product_desc_update_alert').innerHTML=''
+        document.getElementById('price_update_alert').innerHTML=''
+
         const images = document.getElementById('images_update').files[0]
         const product_name = document.getElementById('product_name_update').value
         const product_desc = document.getElementById('product_desc_update').value
@@ -122,6 +127,18 @@
             }
 
         }catch(error){
+            if(error.response.data.errors.hasOwnProperty('product_image')){
+                document.getElementById('images_update_alert').innerHTML=error.response.data.errors['product_image'][0]
+            }
+        if(error.response.data.errors.hasOwnProperty('product_name')){
+            document.getElementById('product_name_update_alert').innerHTML=error.response.data.errors['product_name'][0]
+        }
+        if(error.response.data.errors.hasOwnProperty('description')){
+            document.getElementById('product_desc_update_alert').innerHTML=error.response.data.errors['description'][0]
+        }
+        if(error.response.data.errors.hasOwnProperty('price')){
+            document.getElementById('price_update_alert').innerHTML=error.response.data.errors['price'][0]
+        }
             console.log(error)
         }
     }

@@ -19,6 +19,13 @@ class ApiController extends Controller
     public function createProduct(Request $request){
         // dd($request);
 
+        $validatedData = $request->validate([
+            'product_image' => 'required|image|max:2048', // Example: Allow only image files up to 2MB
+            'product_name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'price' => 'required|numeric'
+        ]);
+
         $product = new Product();
 
         if ($request->hasFile('product_image')) {
@@ -33,9 +40,9 @@ class ApiController extends Controller
         } else {
             $imageUrl = null;
         }
-        $product->name=$request->product_name;
-        $product->desc=$request->description;
-        $product ->price=$request->price;
+        $product->name=$validatedData['product_name'];
+        $product->desc=$validatedData['description'];
+        $product ->price=$validatedData['price'];
         $product ->image_data =$imageUrl;
 
         if($product->save()){
@@ -99,6 +106,13 @@ class ApiController extends Controller
 
     public function updateProduct($id,Request $request){
         // dd($request);
+        $validatedData = $request->validate([
+            'product_image' => 'required|image|max:2048', // Example: Allow only image files up to 2MB
+            'product_name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'price' => 'required|numeric'
+        ]);
+
         if ($request->hasFile('product_image')) {
             $image = $request->file('product_image');
             $imageName = $this->sanitizeFileName($image->getClientOriginalName());
@@ -112,13 +126,13 @@ class ApiController extends Controller
             $imageUrl = null;
         }
 
-        // dd($imageUrl);
+        // dd($imageUrl)
 
         $product = Product::find($id)->update([
             "image_data"=>$imageUrl,
-            "name"=>$request->product_name,
-            "desc"=>$request->description,
-            "price"=>$request->price,
+            "name"=>$validatedData['product_name'],
+            "desc"=>$validatedData['description'],
+            "price"=>$validatedData['price'],
         ]);
 
         if($product){
