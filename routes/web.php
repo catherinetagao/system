@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,8 @@ Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
 Route::get('/crud', [CrudController::class, 'index'])->name('crud');
 
 Route::get('/products', [ProductController::class, 'index']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 
 
