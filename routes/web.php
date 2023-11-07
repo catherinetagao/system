@@ -38,7 +38,7 @@ Route::get('/crud', [CrudController::class, 'index'])->name('crud');
 
 Route::get('/products', [ProductController::class, 'index']);
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 
 
