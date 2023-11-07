@@ -14,20 +14,22 @@
                     <ul class="navbar-nav me-auto ">
                     @guest
                     @else
-                    <!-- <a class="me-3 text-black text-decoration-none" href="/home"><li>Home</li></a> -->
-                    <a class="me-3 text-black text-decoration-none" href="/about"><li>About</li></a>
-                    <!-- <a class="me-3 text-black text-decoration-none" href="/products"><li>Products</li></a> -->
-                    <a class="me-3 text-black text-decoration-none" href="/contacts"><li>Contact Us</li></a>
-                    <!-- <a class="me-3 text-black text-decoration-none" href="/crud"><li>Crud</li></a> -->
-
-                    @if (auth()->user()->hasRole('store'))
-                        <a class="me-3 text-black text-decoration-none" href="/products"><li>Products</li></a>
-                    @endif
 
                     @if (auth()->user()->hasRole('admin'))
-                        <a class="me-3 text-black text-decoration-none" href="/products"><li>Products</li></a>
                         <a class="me-3 text-black text-decoration-none" href="/dashboard"><li>Dashboard</li></a>
+                        <a class="me-3 text-black text-decoration-none" href="/products"><li>Store</li></a>
+                        <a class="me-3 text-black text-decoration-none" href="/products"><li>Products</li></a>
+                        <!-- <a class="me-3 text-black text-decoration-none" href="/dashboard"><li>Dashboard</li></a> -->
                     @endif
+    
+                    <a class="me-3 text-black text-decoration-none" href="/about"><li>About</li></a>
+                    <a class="me-3 text-black text-decoration-none" href="/contacts"><li>Contact Us</li></a>
+
+                    @if (auth()->user()->hasRole('store'))
+                        <a class="me-3 text-black text-decoration-none" href="/products"><li>Store</li></a>
+                        <a class="me-3 text-black text-decoration-none" href="/products"><li>Products</li></a>
+                    @endif
+
                     @endguest
                     
                     </ul>
