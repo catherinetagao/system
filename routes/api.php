@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,5 @@ Route::get('/product/delete/{id}',[ApiController::class, 'deleteProduct']);
 Route::get('/getProduct/{id}', [ApiController::class, 'getProduct']);
 
 Route::post('/product/update/{id}',[ApiController::class, 'updateProduct']);
+
+Route::post('/login',[LoginController::class, 'login']);
