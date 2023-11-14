@@ -24,7 +24,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             // Return a JSON response on successful authentication
-            return response()->json(['message' => 'Login successful', 'redirect' => '/dashboard']);
+            return response()->json(['message' => 'Login successful']);
         }
 
         // Return a JSON response on authentication failure
