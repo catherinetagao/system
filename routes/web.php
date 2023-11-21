@@ -31,7 +31,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
+Route::get('/contacts', [ContactController::class, 'index']);
 
 // Route::get('/products', [ProductController::class, 'index'])->name('products');
 
@@ -41,7 +41,9 @@ Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-// Route::get('/store', [StoreController::class, 'index']);
+Route::get('/store', [StoreController::class, 'index']);
+
+Route::get('/home', [HomeController::class, 'index']);
 
 
 

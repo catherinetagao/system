@@ -31,3 +31,7 @@ Route::get('/getProduct/{id}', [ApiController::class, 'getProduct']);
 Route::post('/product/update/{id}',[ApiController::class, 'updateProduct']);
 
 Route::post('/login',[LoginController::class, 'login']);
+
+Route::post('/logout',[LoginController::class, 'logout']);
+
+Route::post('/register',[LoginController::class, 'register']);

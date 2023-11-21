@@ -13,20 +13,20 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto ">
                     @guest
+                        <!-- <a class="me-3 text-black text-decoration-none" href="/about"><li>About</li></a>
+                        <a class="me-3 text-black text-decoration-none" href="/contacts"><li>Contact Us</li></a> -->
                     @else
 
                     @if (auth()->user()->hasRole('admin'))
                         <a class="me-3 text-black text-decoration-none" href="/dashboard"><li>Dashboard</li></a>
-                        <a class="me-3 text-black text-decoration-none" href="/products"><li>Store</li></a>
+                        <a class="me-3 text-black text-decoration-none" href="/store"><li>Store</li></a>
                         <a class="me-3 text-black text-decoration-none" href="/products"><li>Products</li></a>
                         <!-- <a class="me-3 text-black text-decoration-none" href="/dashboard"><li>Dashboard</li></a> -->
                     @endif
-    
-                    <a class="me-3 text-black text-decoration-none" href="/about"><li>About</li></a>
-                    <a class="me-3 text-black text-decoration-none" href="/contacts"><li>Contact Us</li></a>
+
 
                     @if (auth()->user()->hasRole('store'))
-                        <a class="me-3 text-black text-decoration-none" href="/products"><li>Store</li></a>
+                        <a class="me-3 text-black text-decoration-none" href="/store"><li>Store</li></a>
                         <a class="me-3 text-black text-decoration-none" href="/products"><li>Products</li></a>
                     @endif
 
@@ -38,6 +38,11 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="/home"><li>Home</li></a>
+                                <a class="nav-link" href="/about"><li>About</li></a>
+                                <a class="nav-link" href="/contacts"><li>Contact Us</li></a>
+                            </li>
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
